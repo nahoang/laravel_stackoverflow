@@ -10781,3 +10781,17 @@ textarea.form-control-lg {
   width: 60px;
   height: 60px;
 }
+.counters .status.unanswered {
+  border: none;
+}
+.counters .status.answered {
+  border: 1px solid rgb(95, 187, 126);
+  color: rgb(95, 187, 126);
+}
+.counters .status.answered-accepted {
+  background: rgb(95, 187, 126);
+  color: #fff;
+}
+.counters .view {
+  margin-top: 10px;
+}
