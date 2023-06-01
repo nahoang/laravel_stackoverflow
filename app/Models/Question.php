@@ -31,8 +31,9 @@ class Question extends Model
         return $this->created_at->diffForHumans();
     }
 
-    public function getStatusAttribute() {
-        if ($this->answers > 0) {
+    public function getStatusAttribute() 
+    {
+        if ($this->answers_count > 0) {
             if ($this->best_answer_id) {
                 return "answered-accepted";
             }
@@ -41,9 +42,15 @@ class Question extends Model
         return "unanswered";
     }
 
-    public function getBodyHtmlAttribute() {
+    public function getBodyHtmlAttribute() 
+    {
         $parsedown = new Parsedown();
         return $parsedown->text($this->body);
+    }
+
+    public function answers() 
+    {
+        return $this->hasMany(Answer::class);    
     }
 
 }
