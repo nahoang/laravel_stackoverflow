@@ -4,6 +4,10 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Database\Seeders\UsersQuestionsAnswersTableSeeder;
+use Database\Seeders\VotablesTableSeeder;
+use Database\Seeders\FavoritesTableSeeder;
+
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsersQuestionsAnswersTableSeeder::class,
             FavoritesTableSeeder::class,
+            VotablesTableSeeder::class,
         ])
         
     }
