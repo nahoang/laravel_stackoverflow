@@ -10815,6 +10815,7 @@ form.form-delete {
   margin-right: 30px;
   text-align: center;
   color: #495057;
+  float: left;
 }
 .vote-controls span, .vote-controls a {
   display: block;
