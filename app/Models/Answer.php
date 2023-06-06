@@ -3,12 +3,15 @@
 namespace App\Models;
 
 use Parsedown;
+use App\Models\VotableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Answer extends Model
 {
     use HasFactory;
+
+    use VotableTrait;
 
     protected $fillable = ['body', 'user_id'];
     public function question() 

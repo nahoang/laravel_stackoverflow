@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Parsedown;
 use Illuminate\Support\Str;
+use App\Models\VotableTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -11,6 +12,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Question extends Model
 {
     use HasFactory;
+
+    use VotableTrait;
 
     protected $fillable = ['title', 'body'];
     
@@ -79,19 +82,5 @@ class Question extends Model
         return $this->favorites->count();
     }
 
-    public function votes() 
-    {
-        return $this->morphedByMany(User::class, 'votable');
-    }
-
-    public function upVotes() 
-    {
-        return $this->votes()->wherePivot('vote', 1);
-    }
-
-    public function downVotes() 
-    {
-        return $this->votes()->wherePivot('vote', -1);
-    }
 
 }
